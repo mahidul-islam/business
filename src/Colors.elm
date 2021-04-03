@@ -8,6 +8,11 @@ blue =
     Element.rgb255 0 68 204
 
 
+blueTransparent : Element.Color
+blueTransparent =
+    Element.rgba 0 68 204 0.1
+
+
 ceruleanBlue : Element.Color
 ceruleanBlue =
     Element.rgb255 0 117 244

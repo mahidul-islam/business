@@ -50,7 +50,7 @@ edges =
 
 
 type alias Person =
-    { firstName : String
+    { name : String
     , collector : String
     , amount : Int
     }
@@ -58,11 +58,11 @@ type alias Person =
 
 persons : List Person
 persons =
-    [ { firstName = "David"
+    [ { name = "David"
       , collector = "Bowie"
       , amount = 100000
       }
-    , { firstName = "Florence"
+    , { name = "Florence"
       , collector = "Welch"
       , amount = 200000
       }
@@ -92,11 +92,11 @@ view model =
                 (Element.table [ Background.color blueTransparent, padding 20, Border.rounded 20 ]
                     { data = persons
                     , columns =
-                        [ { header = el [ Font.color blue, Font.size 18, padding 10 ] (text "First Name")
+                        [ { header = el [ Font.color blue, Font.size 18, padding 10 ] (text "Investor's Name")
                           , width = fill
                           , view =
                                 \person ->
-                                    el [ Font.size 16, padding 8 ] (text person.firstName)
+                                    el [ Font.size 16, padding 8 ] (text person.name)
                           }
                         , { header = el [ Font.color blue, Font.size 18, padding 10 ] (text "Collector")
                           , width = fill

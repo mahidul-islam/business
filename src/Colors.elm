@@ -1,6 +1,13 @@
 module Colors exposing (..)
 
-import Element
+import Element exposing (Color, fromRgb, rgba, toRgb)
+
+
+withOpacity : Color -> Float -> Color
+withOpacity color opacity =
+    case toRgb color of
+        rgba ->
+            fromRgb { rgba | alpha = opacity }
 
 
 blue : Element.Color

@@ -1,7 +1,7 @@
 module Main exposing (..)
 
 import Browser
-import Colors exposing (apple, blue, blueGrey, blueTransparent, blueyGrey, charcoalGrey, greenBlue, lightBlueGrey, paleGrey, tangerine, white)
+import Colors exposing (apple, blue, blueGrey, blueTransparent, blueyGrey, charcoalGrey, greenBlue, lightBlueGrey, paleGrey, tangerine, white, withOpacity)
 import Element exposing (Element, alignLeft, alignRight, centerX, centerY, column, el, fill, height, maximum, padding, paddingEach, rgb255, row, spacing, text, width)
 import Element.Background as Background
 import Element.Border as Border
@@ -41,6 +41,7 @@ update msg model =
 ---- VIEW ----
 
 
+edges : { top : number, right : number, bottom : number, left : number }
 edges =
     { top = 0
     , right = 0
@@ -89,7 +90,7 @@ view model =
                     (text "Investors :")
                 ]
             , el [ padding 20, Background.color white, width fill ]
-                (Element.table [ Background.color blueTransparent, padding 20, Border.rounded 20 ]
+                (Element.table [ Background.color (withOpacity blue 0.1), padding 20, Border.rounded 20 ]
                     { data = persons
                     , columns =
                         [ { header = el [ Font.color blue, Font.size 18, padding 10 ] (text "Investor's Name")
